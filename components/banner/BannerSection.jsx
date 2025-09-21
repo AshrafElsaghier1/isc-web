@@ -42,7 +42,7 @@ const BannerSection = () => {
       </div>
 
       <span
-        className="absolute bottom-6 left-1/2 z-20 w-[22px] h-[36px] rounded-[20px] border-2 border-white -translate-x-1/2 cursor-pointer
+        className="absolute bottom-6 left-1/2 z-20 w-[22px] h-[36px] rounded-[20px] border-2 border-white -translate-x-1/2
           before:content-[''] before:absolute before:w-[7px] before:h-[7px] before:rounded-full before:bg-main
           before:top-[7px] before:left-1/2 before:-translate-x-1/2
           before:animate-[mouseAnimation_2s_cubic-bezier(0.215,0.61,0.355,1)_infinite]
