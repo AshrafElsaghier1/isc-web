@@ -2,7 +2,6 @@ import { Inter } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import Header from "@/components/layout/Header";
-import AppSidebar from "@/components/layout/Sidebar";
 import { ThemeProvider } from "@/components/layout/ThemeProvider";
 import { getLocale } from "next-intl/server";
 
