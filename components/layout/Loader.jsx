@@ -7,18 +7,17 @@ const Loader = ({ onComplete }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(interval);
-          if (onComplete) onComplete();
-          return 100;
-        }
-        return prev + 1;
-      });
+      setProgress((prev) => (prev >= 100 ? 100 : prev + 1));
     }, 45);
 
     return () => clearInterval(interval);
-  }, [onComplete]);
+  }, []);
+
+  useEffect(() => {
+    if (progress >= 100) {
+      onComplete?.();
+    }
+  }, [progress, onComplete]);
 
   return (
     <div
