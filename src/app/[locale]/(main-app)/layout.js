@@ -7,7 +7,7 @@ import { getLocale } from "next-intl/server";
 
 import "../globals.css";
 import { Toaster } from "@/components/ui/sonner";
-import SessionWrapper from "@/components/layout/SessionWrapper";
+import ClientWrapper from "@/components/layout/ClientWrapper";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -32,7 +32,7 @@ export default async function RootLayout({ children }) {
         className="dark"
       >
         <body className={`${inter.className} antialiased`}>
-          <SessionWrapper>
+          <ClientWrapper>
             <ThemeProvider
               attribute="class"
               defaultTheme="system"
@@ -48,7 +48,7 @@ export default async function RootLayout({ children }) {
                 </div>
               </SidebarProvider>
             </ThemeProvider>
-          </SessionWrapper>
+          </ClientWrapper>
         </body>
       </html>
     </NextIntlClientProvider>
