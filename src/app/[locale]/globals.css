@@ -146,3 +146,34 @@ body {
   background: var(--color-main);
   border-radius: 8px;
 }
+
+@keyframes mouseAnimation {
+  0%,
+  to,
+  65% {
+    opacity: 0;
+  }
+
+  10%,
+  40% {
+    opacity: 1;
+  }
+
+  0% {
+    transform: translateY(5px) scale(0.7);
+  }
+
+  5% {
+    transform: scale(0.7);
+  }
+
+  to,
+  15% {
+    transform: scale(1);
+  }
+
+  45%,
+  65% {
+    transform: translateY(15px) scale(0.7);
+  }
+}

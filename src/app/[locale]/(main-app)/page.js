@@ -1,7 +1,13 @@
+import BannerSection from "@/components/banner/BannerSection";
 import React from "react";
 
-const Dashboard = () => {
-  return <div>Dashboard</div>;
+const Home = () => {
+  return (
+    <>
+      <BannerSection />
+      <div>asdasd s asd sa</div>
+    </>
+  );
 };
 
-export default Dashboard;
+export default Home;

@@ -39,14 +39,14 @@ export default async function RootLayout({ children }) {
               enableSystem
               disableTransitionOnChange
             >
-              <SidebarProvider>
-                {/* <AppSidebar /> */}
-                <div className="w-full">
-                  <Header />
-                  <main className="p-6">{children}</main>
-                  <Toaster position="top-center" richColors duration={1500} />
-                </div>
-              </SidebarProvider>
+              {/* <SidebarProvider> */}
+              {/* <AppSidebar /> */}
+              <div className="w-full">
+                {/* <Header /> */}
+                <main className="">{children}</main>
+                <Toaster position="top-center" richColors duration={1500} />
+              </div>
+              {/* </SidebarProvider> */}
             </ThemeProvider>
           </ClientWrapper>
         </body>
