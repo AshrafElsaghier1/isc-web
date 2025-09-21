@@ -1,8 +1,11 @@
 import Image from "next/image";
 import React from "react";
 import logo from "../../public/assets/logo.png";
+import { useLocale } from "next-intl";
 
 const BannerSection = () => {
+  const locale = useLocale();
+
   return (
     <section
       className="relative h-screen w-full overflow-hidden"
@@ -30,11 +33,9 @@ const BannerSection = () => {
           draggable={false}
           className="animate__animated animate__fadeInDown animate__delay-1s"
         />
-
         <h1 className="uppercase text-3xl md:text-5xl font-extrabold text-white drop-shadow-lg animate__animated animate__lightSpeedInRight animate__delay-2s">
           Welcome to <span className="text-main">Our Website</span>
         </h1>
-
         <p className="max-w-lg text-base md:text-lg text-gray-200 mt-2 animate__animated animate__fadeInUp animate__delay-3s">
           Your gateway to premium digital solutions — crafted with innovation
           and passion.
@@ -42,11 +43,15 @@ const BannerSection = () => {
       </div>
 
       <span
-        className="absolute bottom-6 left-1/2 z-20 w-[22px] h-[36px] rounded-[20px] border-2 border-white -translate-x-1/2
-          before:content-[''] before:absolute before:w-[7px] before:h-[7px] before:rounded-full before:bg-main
-          before:top-[7px] before:left-1/2 before:-translate-x-1/2
-          before:animate-[mouseAnimation_2s_cubic-bezier(0.215,0.61,0.355,1)_infinite]
-          hover:scale-110 transition-transform"
+        className={`absolute scroll-indicator bottom-6 ${
+          locale == "ar" ? "right-1/2" : "left-1/2"
+        } z-20 w-[22px] h-[36px] rounded-[20px] border-2 border-white -translate-x-1/2
+    before:content-[''] before:absolute before:w-[7px] before:h-[7px] before:rounded-full before:bg-main
+    before:top-[7px] ${
+      locale == "ar" ? "before:right-1/2" : "before:left-1/2"
+    } before:-translate-x-1/2
+    before:animate-[mouseAnimation_2s_cubic-bezier(0.215,0.61,0.355,1)_infinite]
+     transition-transform`}
       />
     </section>
   );
