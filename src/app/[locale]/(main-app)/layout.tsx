@@ -16,6 +16,7 @@ import "../globals.css";
 export const metadata = {
   title: "ISC App",
   description: "Awesome Next.js app",
+
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -24,7 +25,32 @@ export const metadata = {
     apple: "/apple-touch-icon.png",
     other: [{ rel: "manifest", url: "/site.webmanifest" }],
   },
+
   themeColor: "#000000",
+
+  openGraph: {
+    title: "ISC App",
+    description: "Awesome Next.js app built with Next.js",
+    url: "https://isc-app.vercel.app", // replace with your domain
+    siteName: "ISC App",
+    images: [
+      {
+        url: "https://isc-app.vercel.app/favicon.ico", // must be absolute URL
+        width: 1200,
+        height: 630,
+        alt: "ISC App Preview",
+      },
+    ],
+    locale: "en",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "ISC App",
+    description: "Awesome Next.js app built with Next.js",
+    images: ["https://isc-app.vercel.app/favicon.ico"],
+  },
 };
 
 export default async function RootLayout({
