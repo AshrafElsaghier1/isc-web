@@ -14,8 +14,17 @@ const inter = Inter({
 import "animate.css";
 import "../globals.css";
 export const metadata = {
-  title: "",
-  description: " ",
+  title: "ISC App",
+  description: "Awesome Next.js app",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/apple-touch-icon.png",
+    other: [{ rel: "manifest", url: "/site.webmanifest" }],
+  },
+  themeColor: "#000000",
 };
 
 export default async function RootLayout({
