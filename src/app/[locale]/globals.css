@@ -123,7 +123,18 @@ body {
   --sidebar-ring: oklch(0.556 0 0);
   --color-secondary: #91939f;
 }
-
+@layer components {
+  .scroll-indicator {
+    @apply absolute bottom-6 z-20 w-[22px] h-[36px] rounded-[20px] border-2 border-white 
+           -translate-x-1/2 transition-transform
+           ltr:left-1/2 rtl:right-1/2
+           before:content-[''] before:absolute before:w-[7px] before:h-[7px] 
+           before:rounded-full before:bg-main before:top-[7px]
+           before:-translate-x-1/2
+           before:animate-[mouseAnimation_2s_cubic-bezier(0.215,0.61,0.355,1)_infinite]
+           ltr:before:left-1/2 rtl:before:right-1/2;
+  }
+}
 @layer base {
   * {
     @apply border-border outline-ring/50;
