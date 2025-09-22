@@ -17,7 +17,7 @@ export default function Footer() {
   return (
     <footer className=" text-white  ">
       <div className="grid grid-cols-12 gap-4 ">
-        <div className="col-span-12 md:col-span-9    order-2 md:order-1  grid grid-cols-12 gap-2 px-6   pb-8 pt-12 md:pe-0 md:ps-12 shadow-[inset_0_0_40px_#292d2ec7]">
+        <div className="col-span-12 md:col-span-9    order-2 md:order-1  grid grid-cols-12 gap-2 px-6   pb-8 pt-12 md:pe-0   shadow-[inset_0_0_40px_#292d2ec7]">
           <div className="col-span-12 md:col-span-4">
             <h5 className="font-semibold text-primary mb-1.5 "> HEAD OFFICE</h5>
             <Link
@@ -44,7 +44,7 @@ export default function Footer() {
               <h5 className="font-semibold text-primary mb-1.5 md:mt-4 ">
                 FOLLOW US
               </h5>
-              <ul className="flex  ">
+              <ul className="flex mt-1 ">
                 {socialIcons.map(({ link, Icon }, index) => (
                   <li className="me-4" key={index}>
                     <Link
@@ -74,7 +74,7 @@ export default function Footer() {
               <CustomLink
                 label="Send A Message"
                 href="/"
-                icon={<Mail color="white" size={24} />}
+                icon={<Mail className="text-primary" size={24} />}
               />
             </div>
           </div>
