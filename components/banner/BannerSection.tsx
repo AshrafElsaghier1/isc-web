@@ -34,7 +34,7 @@ const BannerSection = () => {
           className="animate__animated animate__fadeInDown animate__delay-1s"
         />
         <h1 className="uppercase text-3xl md:text-5xl font-extrabold text-white drop-shadow-lg animate__animated animate__lightSpeedInRight animate__delay-2s">
-          Welcome to <span className="text-main">Our Website</span>
+          Welcome to <span className="text-primary">Our Website</span>
         </h1>
         <p className="max-w-lg text-base md:text-lg text-gray-200 mt-2 animate__animated animate__fadeInUp animate__delay-3s">
           Your gateway to premium digital solutions — crafted with innovation

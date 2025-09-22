@@ -142,12 +142,36 @@ body {
            -translate-x-1/2 transition-transform
            ltr:left-1/2 rtl:right-1/2
            before:content-[''] before:absolute before:w-[7px] before:h-[7px] 
-           before:rounded-full before:bg-main before:top-[7px]
+           before:rounded-full before:bg-primary before:top-[7px]
            before:-translate-x-1/2
            before:animate-[mouseAnimation_2s_cubic-bezier(0.215,0.61,0.355,1)_infinite]
            ltr:before:left-1/2 rtl:before:right-1/2;
   }
+  .custom-link-icon {
+    @apply absolute top-1/2 left-1/2 opacity-100
+      -translate-x-1/2 translate-y-full
+      transition-all ease-in delay-0 duration-0
+      group-hover:opacity-100 group-hover:-translate-y-1/2
+      group-hover:delay-[300ms] group-hover:duration-[200ms];
+  }
+  .custom-link {
+    @apply relative inline-block min-w-[170] xl:min-w-[210px] h-[50px] text-center text-white overflow-hidden  after:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:border-[2px] after:border-white after:translate-y-[calc(100%-2px)] after:origin-[50%_100%] after:transition-all after:duration-[500ms] after:ease-[cubic-bezier(0.17,0.67,0,1.01)]
+    hover:after:translate-y-0;
+  }
+  .custom-link-label {
+    @apply absolute 
+    top-[65%] left-1/2 
+    -translate-x-1/2 -translate-y-1/2 
+    opacity-100 
+    w-full 
+    text-[19px] 
+    transition-all duration-500 
+    [transition-timing-function:cubic-bezier(0.17,0.67,0,1.01)]
+      group-hover:-translate-y-[150%] 
+      group-hover:opacity-0;
+  }
 }
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
