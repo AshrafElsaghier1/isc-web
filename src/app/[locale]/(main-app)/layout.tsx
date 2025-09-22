@@ -1,13 +1,13 @@
 import { Inter } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
-import { SidebarProvider } from "@/components/ui/sidebar";
-import Header from "@/components/layout/Header";
-import { ThemeProvider } from "@/components/layout/ThemeProvider";
+// import { SidebarProvider } from "@/components/ui/sidebar";
+// import Header from "@/components/layout/Header";
+// import { ThemeProvider } from "@/components/layout/ThemeProvider";
 import { getLocale } from "next-intl/server";
 
 import "../globals.css";
-import { Toaster } from "@/components/ui/sonner";
-import ClientWrapper from "@/components/layout/ClientWrapper";
+// import { Toaster } from "@/components/ui/sonner";
+// import ClientWrapper from "@/components/layout/ClientWrapper";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -20,11 +20,20 @@ export const metadata = {
   description: " ",
 };
 
-export default async function RootLayout({ children }) {
+import { ReactNode } from "react";
+import ClientWrapper from "../../../../components/layout/ClientWrapper";
+import { ThemeProvider } from "../../../../components/layout/ThemeProvider";
+import { Toaster } from "../../../../components/ui/sonner";
+
+export default async function RootLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
   const currentLocale = await getLocale();
 
   return (
-    <NextIntlClientProvider>
+    <NextIntlClientProvider locale={currentLocale}>
       <html
         lang={currentLocale}
         dir={currentLocale == "ar" ? "rtl" : "ltr"}
