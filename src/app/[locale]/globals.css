@@ -52,6 +52,19 @@ body {
   --color-sidebar-ring: var(--sidebar-ring);
   --color-main: #b89535;
   --color-secondary: #91939f;
+  --color-primary: #e86e0a; /* brand orange */
+  --color-primary-hover: #d26309; /* darker hover orange */
+  --color-primary-foreground: #ffffff; /* text on primary */
+
+  --color-ink: #1a1a1a; /* charcoal black */
+  --color-muted: #999999; /* medium gray */
+
+  --color-bg: #ffffff; /* background */
+  --color-surface: #e6e6e6; /* light gray surface */
+  --color-surface-subtle: #f5f5f5; /* extra light surface */
+
+  --color-border: #e6e6e6; /* borders */
+  --color-ring: #e86e0a; /* focus ring */
 }
 
 :root {
@@ -187,4 +200,43 @@ body {
   65% {
     transform: translateY(15px) scale(0.7);
   }
+}
+
+/* Smooth image transitions (GPU-friendly) */
+.hero-img-in {
+  animation: heroImgIn var(--hero-img-duration, 800ms)
+    var(--hero-ease, cubic-bezier(0.22, 0.61, 0.36, 1)) both;
+}
+.hero-img-out {
+  animation: heroImgOut var(--hero-img-duration, 800ms)
+    var(--hero-ease, cubic-bezier(0.22, 0.61, 0.36, 1)) both;
+}
+
+/* optional stronger motion on big screens */
+@keyframes heroImgIn {
+  from {
+    opacity: 0;
+    transform: translate3d(30px, 0, 0) scale(1.04);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+@keyframes heroImgOut {
+  from {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0) scale(1.02);
+  }
+}
+
+/* make sure flips/slides never show the backface */
+.hero-3d {
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
 }
