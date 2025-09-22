@@ -96,6 +96,7 @@ export default function Footer() {
             alt="Company Logo"
             width={120}
             height={120}
+            draggable={false}
           />
         </div>
       </div>
