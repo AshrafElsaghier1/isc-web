@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState, useCallback } from "react";
 import "animate.css";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 type Slide = {
   image: string;
@@ -41,7 +42,7 @@ export default function AnimateCssHero({
     el.classList.remove(
       "animate__animated",
       "animate__fadeInUp",
-      "animate__fadeOutDown",
+      "animate__fadeOutUp",
       "hero-img-in",
       "hero-img-out"
     );
@@ -117,7 +118,7 @@ export default function AnimateCssHero({
       const outImg = playOnce(currImg, ["hero-img-out", "hero-3d"]);
       const outTxt = playOnce(currTxt, [
         "animate__animated",
-        "animate__fadeOutDown",
+        "animate__fadeOutUp",
       ]);
       const inImg = playOnce(nextImg, ["hero-img-in", "hero-3d"]);
       const inTxt = playOnce(nextTxt, [
@@ -218,11 +219,10 @@ export default function AnimateCssHero({
             <button
               onClick={prev}
               aria-label="Previous slide"
-              className="grid h-9 w-9 place-items-center rounded-full
+              className="grid h-9 w-9 place-items-center rounded-full outline-none
                    bg-white/10 hover:bg-white/20
                    ring-1 ring-white/20
-                   transition focus:outline-none
-                   focus:ring-2 focus:ring-white/60 focus:ring-offset-2 focus:ring-offset-black"
+                   transition focus:outline-none"
             >
               <svg
                 className="h-5 w-5 text-white"
@@ -248,11 +248,10 @@ export default function AnimateCssHero({
             <button
               onClick={next}
               aria-label="Next slide"
-              className="grid h-9 w-9 place-items-center rounded-full
+              className="grid h-9 w-9 place-items-center rounded-full outline-none
                    bg-white/10 hover:bg-white/20
                    ring-1 ring-white/20
-                   transition focus:outline-none
-                   focus:ring-2 focus:ring-white/60 focus:ring-offset-2 focus:ring-offset-black"
+                   transition focus:outline-none"
             >
               <svg
                 className="h-5 w-5 text-white"
@@ -290,11 +289,14 @@ export default function AnimateCssHero({
           aria-roledescription="slide"
           aria-label={`${i + 1} of ${data.length}`}
         >
-          <img
+          <Image
             data-hero-image
             src={s.image}
             alt={s.title}
-            className="absolute inset-0 w-full h-full object-cover"
+            fill // makes it behave like absolute inset-0
+            className="object-cover"
+            priority={i === 0} // first slide loads eagerly, others lazy
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-ink/25" />
 
@@ -302,11 +304,11 @@ export default function AnimateCssHero({
           <div
             data-hero-panel
             className="absolute z-10 end-1 bottom-8 sm:bottom-12 
-            w-full lg:max-w-2xl px-3"
+            w-full lg:max-w-2xl p-3"
           >
             <div
               className="rounded-3xl px-5 py-4 sm:px-6 sm:py-6
-               bg-gradient-to-r from-[var(--color-main)]/60 via-[var(--color-main)]/45 to-white/85
+               bg-gradient-to-r from-[var(--color-main)]/60 via-[var(--color-main)]/45 to-black/30
                backdrop-blur-md backdrop-saturate-150
                ring-1 ring-white/20
                shadow-[0_10px_40px_rgba(0,0,0,.25)]"
@@ -331,7 +333,7 @@ export default function AnimateCssHero({
                        bg-white text-[color:var(--color-main)] font-medium
                        hover:bg-white/90
                        focus:outline-none focus:ring-2 focus:ring-[color:var(--color-main)]
-                       focus:ring-offset-2 focus:ring-offset-white/20
+                        focus:ring-offset-white/20
                        transition"
                     >
                       {s.ctaLabel ?? "View Project"}
