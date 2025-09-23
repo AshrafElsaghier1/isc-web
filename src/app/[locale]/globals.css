@@ -5,7 +5,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: #1d1f22;
+    --color-background: #04285e;
     --color-foreground: #ededed;
   }
 }
@@ -103,7 +103,7 @@ body {
 }
 
 .dark {
-  --background: #1d1f22;
+  --background: #363b3c;
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
@@ -156,7 +156,7 @@ body {
   }
   .custom-link {
     @apply relative inline-block min-w-[170px] xl:min-w-[210px] h-[50px] text-center text-white overflow-hidden  after:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:border-[2px] after:border-white after:translate-y-[calc(100%-2px)] after:origin-[50%_100%] after:transition-all after:duration-[500ms] after:ease-[cubic-bezier(0.17,0.67,0,1.01)]
-    hover:after:translate-y-0 hover:after:border-primary;
+    hover:after:translate-y-0;
   }
   .custom-link-label {
     @apply absolute     top-[65%] left-1/2     -translate-x-1/2 -translate-y-1/2     opacity-100     w-full 
@@ -184,7 +184,7 @@ body {
   background: #f3f4f6;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-main);
+  background: #e86e0a;
   border-radius: 8px;
 }
 

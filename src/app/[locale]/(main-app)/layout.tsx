@@ -25,7 +25,6 @@ export const metadata = {
     apple: "/apple-touch-icon.png",
     other: [{ rel: "manifest", url: "/site.webmanifest" }],
   },
-  themeColor: "#000000",
 };
 
 export default async function RootLayout({

@@ -1,6 +1,7 @@
 import React from "react";
 import BannerSection from "./components/BannerSection";
 import HomeCarousel from "./components/homeCarousel";
+import AboutSection from "./components/AboutSection";
 
 const slides = [
   {
@@ -37,6 +38,7 @@ const Home = () => {
     <>
       {/* Hero Section */}
       <BannerSection />
+      <AboutSection />
       <HomeCarousel slides={slides} autoplayMs={5500} />
     </>
   );
