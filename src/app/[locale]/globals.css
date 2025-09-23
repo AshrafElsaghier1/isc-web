@@ -2,16 +2,34 @@
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: #04285e;
-    --color-foreground: #ededed;
-  }
+@font-face {
+  font-family: "Now";
+  src: url("/fonts/Now-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
+
+@font-face {
+  font-family: "Now";
+  src: url("/fonts/Now-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Now";
+  src: url("/fonts/Now-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* global.css */
 body {
   cursor: url("/arrow.png"), auto;
+  font-family: "Now", sans-serif;
 }
 
 @theme inline {
@@ -65,6 +83,7 @@ body {
 
   --color-border: #e6e6e6; /* borders */
   --color-ring: #e86e0a; /* focus ring */
+  --font-now: "Now", sans-serif;
 }
 
 :root {
