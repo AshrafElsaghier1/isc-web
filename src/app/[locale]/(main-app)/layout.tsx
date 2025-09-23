@@ -50,15 +50,10 @@ export default async function RootLayout({
               enableSystem
               disableTransitionOnChange
             >
-              {/* <SidebarProvider> */}
-              {/* <AppSidebar /> */}
               <div className="w-full">
-                {/* <Header /> */}
                 <main className="">{children}</main>
-
                 <Footer />
               </div>
-              {/* </SidebarProvider> */}
             </ThemeProvider>
           </ClientWrapper>
         </body>
