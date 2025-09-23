@@ -34,7 +34,7 @@ const AboutSection = () => {
         <Image
           src="/assets/about-img.webp"
           alt="about-img"
-          width={1200}
+          width={1300}
           height={350}
         />
       </div>
