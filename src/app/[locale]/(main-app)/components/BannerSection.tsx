@@ -1,11 +1,7 @@
 import Image from "next/image";
 import React from "react";
-import logo from "../../public/assets/logo.png";
-import { useLocale } from "next-intl";
-
+import logo from "../../../../../public/assets/logo.png";
 const BannerSection = () => {
-  const locale = useLocale();
-
   return (
     <section
       className="relative h-screen w-full overflow-hidden"

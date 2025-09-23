@@ -1,7 +1,6 @@
-import dynamic from "next/dynamic";
 import React from "react";
-import BannerSection from "../../../../components/banner/BannerSection";
-import HomeCarousel from "../../../../components/home-carousel/homeCarousel";
+import BannerSection from "./components/BannerSection";
+import HomeCarousel from "./components/homeCarousel";
 
 const slides = [
   {
