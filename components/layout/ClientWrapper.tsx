@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import Loader from "./Loader";
 
 export default function ClientWrapper({ children }: { children: ReactNode }) {
