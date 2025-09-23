@@ -74,7 +74,7 @@ export default function Footer() {
               <CustomLink
                 label="Send A Message"
                 href="/"
-                icon={<Mail className="text-primary" size={24} />}
+                icon={<Mail className="text-white" size={24} />}
               />
             </div>
           </div>
