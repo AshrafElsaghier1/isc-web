@@ -434,3 +434,25 @@ body {
 .rtl [data-hero-underlay].hero-underlay-sweep {
   animation-name: hero-underlay-sweep-rtl;
 }
+
+/* Subtle diagonal pattern for the menu background */
+.menu-bg {
+  background-image: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.04) 0%,
+      rgba(255, 255, 255, 0.02) 35%,
+      rgba(255, 255, 255, 0) 60%
+    ),
+    radial-gradient(
+      120% 120% at 100% 0%,
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(255, 255, 255, 0) 60%
+    );
+}
+
+/* Optional: better text rendering */
+.menu-bg,
+.rtl {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
