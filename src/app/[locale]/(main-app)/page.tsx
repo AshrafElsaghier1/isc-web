@@ -36,7 +36,7 @@ const Home = () => {
       {/* Hero Section */}
       <BannerSection />
       <AboutSection />
-      <HomeCarousel slides={slides} autoplayMs={5500} />
+      <HomeCarousel />
       <MediaSection />
     </>
   );
