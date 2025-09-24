@@ -2,6 +2,7 @@ import React from "react";
 import BannerSection from "./components/BannerSection";
 import AboutSection from "./components/AboutSection";
 import MediaSection from "./components/MediaSection";
+import HomeSwiper from "./components/HomeSwiper";
 const slides = [
   {
     image: "/assets/carousel.webp",
@@ -35,7 +36,7 @@ const Home = () => {
       {/* Hero Section */}
       <BannerSection />
       <AboutSection />
-
+      <HomeSwiper slides={slides} autoplayMs={5500} />
       <MediaSection />
     </>
   );
