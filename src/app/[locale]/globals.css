@@ -391,21 +391,21 @@ body {
     filter: blur(0px) saturate(100%);
   }
 }
-@keyframes hero-underlay-sweep-ltr {
+/* @keyframes hero-underlay-sweep-ltr {
   0% {
     opacity: 0;
     transform: translateX(-30%);
     filter: blur(6px) saturate(110%);
   }
   10% {
-    opacity: 0.55;
+    opacity: 0.55;z1
   }
   100% {
     opacity: 0;
     transform: translateX(130%);
     filter: blur(0px) saturate(100%);
   }
-}
+} */
 
 /* default LTR; use .rtl .hero-underlay-sweep to flip if you prefer a CSS-only RTL flip */
 [data-hero-underlay].hero-underlay-sweep {
