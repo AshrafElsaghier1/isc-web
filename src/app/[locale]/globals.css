@@ -169,7 +169,7 @@ body {
   }
   .custom-link-icon {
     @apply absolute top-1/2 left-1/2 opacity-100
-      -translate-x-1/2 translate-y-full
+      -translate-x-1/2 translate-y-[60px]
       transition-all ease-in delay-0 duration-0
       group-hover:opacity-100 group-hover:-translate-y-1/2
       group-hover:delay-[300ms] group-hover:duration-[200ms];
