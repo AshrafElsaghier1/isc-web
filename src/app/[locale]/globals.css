@@ -180,7 +180,7 @@ body {
   }
   .custom-link-label {
     @apply absolute     top-[65%] left-1/2     -translate-x-1/2 -translate-y-1/2     opacity-100     w-full 
-    text-[19px]     transition-all duration-500    [transition-timing-function:cubic-bezier(0.17,0.67,0,1.01)]
+    text-[19px]  transition-all duration-500    [transition-timing-function:cubic-bezier(0.17,0.67,0,1.01)]
       group-hover:-translate-y-[150%]       group-hover:opacity-0;
   }
 }
