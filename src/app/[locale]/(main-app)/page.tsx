@@ -2,6 +2,7 @@ import React from "react";
 import BannerSection from "./components/BannerSection";
 import HomeCarousel from "./components/homeCarousel";
 import AboutSection from "./components/AboutSection";
+import MediaSection from "./components/MediaSection";
 
 const slides = [
   {
@@ -40,6 +41,7 @@ const Home = () => {
       <BannerSection />
       <AboutSection />
       <HomeCarousel slides={slides} autoplayMs={5500} />
+      <MediaSection />
     </>
   );
 };
