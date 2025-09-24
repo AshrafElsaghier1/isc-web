@@ -28,7 +28,11 @@ const AboutSection = () => {
             />
           </div>
         </div>
-        <div className=" hidden md:block col-span-3 col-start-10 bg-gradient-to-tr from-primary to-primary-hover shadow-[inset_0_0_40px_#e86e0acc,inset_0_0_40px_#080400aa] "></div>
+        <div
+          className="hidden md:block col-span-3 col-start-10 
+    bg-gradient-to-tr from-primary to-[#8a6b2a]
+    shadow-[inset_0_0_40px_#b89535aa,inset_0_0_40px_#634403aa]"
+        ></div>
       </div>
       <div className="flex justify-end ps-6  lg:pl-[130px]">
         <Image
