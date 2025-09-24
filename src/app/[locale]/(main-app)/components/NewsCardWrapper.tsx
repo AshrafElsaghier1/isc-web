@@ -34,7 +34,7 @@ const NewsCardWrapper = ({ children }: { children: ReactNode }) => {
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         className="border bg-transparent rounded-none border-gray-400 
-                   transition-transform duration-200 ease-out
+                   transition-all duration-400 ease-out
                    hover:border-transparent hover:shadow-[0_0_40px_#292d2e] p-0
                    will-change-transform h-full"
         style={{
