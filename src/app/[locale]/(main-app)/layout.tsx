@@ -7,6 +7,7 @@ import Footer from "../../../../components/layout/Footer";
 
 import "animate.css";
 import "../globals.css";
+import FullScreenNav from "../../../../components/layout/FullScreenNav";
 export const metadata = {
   title: "ISC App",
   description: "Awesome Next.js app",
@@ -44,6 +45,12 @@ export default async function RootLayout({
               enableSystem
               disableTransitionOnChange
             >
+              <FullScreenNav
+                brand="ATTAL PROPERTIES"
+                phoneLabel="19431"
+                // Optionally override items:
+                // leftItems={[...]} rightItems={[...]}
+              />
               <div className="w-full">
                 <main className="">{children}</main>
                 <Footer />
