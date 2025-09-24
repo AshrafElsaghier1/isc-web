@@ -62,7 +62,6 @@ export default function AnimateCssHero({
       if (!el) return resolve();
       clear(el);
       // force reflow
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (el as any).offsetWidth;
       el.classList.add(...classes);
       const done = () => {
@@ -79,7 +78,6 @@ export default function AnimateCssHero({
     bar.style.transition = "none";
     bar.style.width = "0%";
     // reflow
-    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     bar.offsetWidth;
     bar.style.transition = `width ${autoplayMs}ms linear`;
     bar.style.width = "100%";

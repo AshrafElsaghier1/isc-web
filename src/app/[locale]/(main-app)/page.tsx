@@ -1,13 +1,11 @@
 import React from "react";
 import BannerSection from "./components/BannerSection";
-import HomeCarousel from "./components/homeCarousel";
 import AboutSection from "./components/AboutSection";
 import MediaSection from "./components/MediaSection";
-
+import HomeCarousel from "./components/HomeCarousel";
 const slides = [
   {
-    image:
-      "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=2000&auto=format&fit=crop",
+    image: "/assets/carousel.webp",
     title: "Central Business District",
     description:
       "EPDM 110,000 m² • Bitumen 200,000 m² • Cement-based 70,000 m² • Crystalline 30,000 m² • Polyurea 10,000 m² • Thermal 10,000 m² • Epoxy floor 10,000 m².",
@@ -15,8 +13,7 @@ const slides = [
     ctaLabel: "View CBD Project",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=2000&auto=format&fit=crop",
+    image: "/assets/carousel.webp",
     title: "Central Business District",
     description:
       "EPDM 110,000 m² • Bitumen 200,000 m² • Cement-based 70,000 m² • Crystalline 30,000 m² • Polyurea 10,000 m² • Thermal 10,000 m² • Epoxy floor 10,000 m².",
@@ -24,8 +21,7 @@ const slides = [
     ctaLabel: "View CBD Project",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=2000&auto=format&fit=crop",
+    image: "/assets/carousel.webp",
     title: "Central Business District",
     description:
       "EPDM 110,000 m² • Bitumen 200,000 m² • Cement-based 70,000 m² • Crystalline 30,000 m² • Polyurea 10,000 m² • Thermal 10,000 m² • Epoxy floor 10,000 m².",
