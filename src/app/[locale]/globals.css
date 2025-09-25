@@ -498,7 +498,7 @@ body {
   opacity: 0.5;
 }
 
-/* .slide-img {
+.slide-img {
   opacity: 0;
   transform: translateX(50px);
   transition: opacity 0.6s ease, transform 0.6s ease;
@@ -514,7 +514,7 @@ body {
   opacity: 1;
   transform: translateX(0);
   transition: opacity 2s ease, transform 3s ease;
-} */
+}
 /* cubic-bezier(0.25, 0.1, 0.25, 1) */
 
 /* .slide-img {
