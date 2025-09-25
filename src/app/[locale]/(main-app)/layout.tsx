@@ -2,7 +2,6 @@ import { NextIntlClientProvider } from "next-intl";
 import { getLocale } from "next-intl/server";
 import { ReactNode } from "react";
 import ClientWrapper from "../../../../components/layout/ClientWrapper";
-import { ThemeProvider } from "../../../../components/layout/ThemeProvider";
 import Footer from "../../../../components/layout/Footer";
 
 import "animate.css";
@@ -39,23 +38,16 @@ export default async function RootLayout({
       >
         <body className={`  antialiased`}>
           <ClientWrapper>
-            <ThemeProvider
-              attribute="class"
-              defaultTheme="system"
-              enableSystem
-              disableTransitionOnChange
-            >
-              <FullScreenNav
-                brand="ATTAL PROPERTIES"
-                phoneLabel="19431"
-                // Optionally override items:
-                // leftItems={[...]} rightItems={[...]}
-              />
-              <div className="w-full">
-                <main className="">{children}</main>
-                <Footer />
-              </div>
-            </ThemeProvider>
+            {/* <FullScreenNav
+              brand="ATTAL PROPERTIES"
+              phoneLabel="19431"
+              // Optionally override items:
+              // leftItems={[...]} rightItems={[...]}
+            /> */}
+            <main className="w-full">
+              {children}
+              <Footer />
+            </main>
           </ClientWrapper>
         </body>
       </html>
