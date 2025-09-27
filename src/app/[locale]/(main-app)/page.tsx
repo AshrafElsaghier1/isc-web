@@ -32,10 +32,10 @@ const slides = [
 const Home = () => {
   return (
     <>
-      {/* <BannerSection />
-      <AboutSection /> */}
+      <BannerSection />
+      <AboutSection />
       <HomeSwiper />
-      {/* <MediaSection /> */}
+      <MediaSection />
     </>
   );
 };
