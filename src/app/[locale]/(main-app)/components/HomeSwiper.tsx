@@ -60,7 +60,22 @@ export default function ProjectSwiper() {
       progressBar.current.style.width = `${(1 - progress) * 100}%`;
     }
   };
+  const contentRef = useRef<HTMLDivElement | null>(null);
 
+  const handleSlideChangeStart = () => {
+    if (contentRef.current) {
+      contentRef.current.classList.remove("animate__fadeInUp");
+      contentRef.current.classList.add("animate__fadeOutDown");
+    }
+  };
+
+  const handleSlideChangeEnd = (swiper: any) => {
+    if (contentRef.current) {
+      contentRef.current.classList.remove("animate__fadeOutDown");
+      contentRef.current.classList.add("animate__fadeInUp");
+    }
+    setActiveIndex(swiper.realIndex);
+  };
   return (
     <section className="relative pb-[220px] overflow-hidden">
       <Swiper
@@ -74,21 +89,8 @@ export default function ProjectSwiper() {
         loop
         className="w-full h-full"
         onAutoplayTimeLeft={onAutoplayTimeLeft}
-        onSlideChangeTransitionStart={(swiper) => {
-          const content = document.querySelector(".content-box");
-          if (content) {
-            content.classList.remove("animate__fadeInUp");
-            content.classList.add("animate__fadeOutDown");
-          }
-        }}
-        onSlideChangeTransitionEnd={(swiper) => {
-          const content = document.querySelector(".content-box");
-          if (content) {
-            content.classList.remove("animate__fadeOutDown");
-            content.classList.add("animate__fadeInUp");
-            setActiveIndex(swiper.realIndex);
-          }
-        }}
+        onSlideChangeTransitionStart={handleSlideChangeStart}
+        onSlideChangeTransitionEnd={handleSlideChangeEnd}
       >
         <div className=" absolute z-3  text-white md:max-w-[60%] pl-6  lg:pl-[130px] lg:r-0  top-20 ">
           <SubHeader title={"Central Business"} />
@@ -115,6 +117,7 @@ export default function ProjectSwiper() {
       <div
         className={`
         content-box  p-12 bg-main-dark gap-4 lg:max-w-[64%] max-w-[85%]  absolute  z-[5] right-0 top-[47%]   animate__animated animate__fadeInUp  `}
+        ref={contentRef}
       >
         <div className="grid grid-cols-12 items-center">
           <div className="col-span-4 p-4">
@@ -147,7 +150,7 @@ export default function ProjectSwiper() {
         <button
           aria-label="Previous Slide"
           className="group transition-all duration-300 p-2 rounded-full bg-white/10 backdrop-blur-sm 
-               hover:bg-white/20 hover:scale-105 active:scale-95 
+               hover:bg-white/20  
                custom-prev absolute ltr:left-0 rtl:right-0 top-1/2 -translate-y-1/2 z-10
                shadow-md focus:outline-none focus:ring-2 focus:ring-main/50"
         >
@@ -157,7 +160,7 @@ export default function ProjectSwiper() {
         <button
           aria-label="Next Slide"
           className="group transition-all duration-300 p-2 rounded-full bg-white/10 backdrop-blur-sm 
-               hover:bg-white/20 hover:scale-105 active:scale-95 
+               hover:bg-white/20  
                custom-next absolute ltr:right-0 rtl:left-0 top-1/2 -translate-y-1/2 z-10
                shadow-md focus:outline-none focus:ring-2 focus:ring-main/50"
         >
