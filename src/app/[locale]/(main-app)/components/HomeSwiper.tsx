@@ -1,18 +1,19 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay, Pagination } from "swiper/modules";
+import { Navigation, Autoplay, Pagination, Parallax } from "swiper/modules";
+import Image from "next/image";
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import Image from "next/image";
+import "swiper/css/parallax";
 import SubHeader from "../../../../../components/layout/SubHeader";
 import CustomLink from "../../../../../components/CustomLink";
 import { FaArrowRightLong } from "react-icons/fa6";
-import { useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useRef, useState } from "react";
 import Link from "next/link";
-
 const slides = [
   {
     banner: "/assets/carousel.webp",
@@ -27,7 +28,7 @@ const slides = [
     banner: "/assets/carousel.webp",
     title: "Central Business",
     description:
-      "EPDM 110,000 m² • Bitumen 200,000 m² • Cement-based 70,000 m² • Crystalline 30,000 m² • Polyurea 10,000 m² • Thermal 10,000 m² • Epoxy floor 10,000 m².",
+      "EPDM 110,000 m² • Bitumen 200,000 m² • Cement-based 70,000 m² • Crystalline 30,000 m² • Polyurea 10,000 m² •  .",
     href: "/projects/cbd-towers",
     ctaLabel: "View CBD Project",
     img: "/assets/banner-2.webp",
@@ -36,7 +37,7 @@ const slides = [
     banner: "/assets/carousel.webp",
     title: "Central Business",
     description:
-      "EPDM 110,000 m² • Bitumen 200,000 m² • Cement-based 70,000 m² • Crystalline 30,000 m² • Polyurea 10,000 m² • Thermal 10,000 m² • Epoxy floor 10,000 m².",
+      "  Crystalline 30,000 m² • Polyurea 10,000 m² • Thermal 10,000 m² • Epoxy floor 10,000 m².",
     href: "/projects/cbd-towers",
     ctaLabel: "View CBD Project",
     img: "/assets/banner.webp",
@@ -49,11 +50,10 @@ const swiperPagination: any = {
   formatFractionTotal: (number: number) =>
     number < 10 ? "0" + number : number,
 };
+const duration = 4000;
 
-export default function ProjectSwiper() {
-  const duration = 4000;
+export default function HeroSlider() {
   const progressBar = useRef<HTMLDivElement>(null);
-
   const [activeIndex, setActiveIndex] = useState(0);
   const onAutoplayTimeLeft = (_: any, __: number, progress: number) => {
     if (progressBar.current) {
@@ -61,14 +61,12 @@ export default function ProjectSwiper() {
     }
   };
   const contentRef = useRef<HTMLDivElement | null>(null);
-
   const handleSlideChangeStart = () => {
     if (contentRef.current) {
       contentRef.current.classList.remove("animate__fadeInUp");
       contentRef.current.classList.add("animate__fadeOutDown");
     }
   };
-
   const handleSlideChangeEnd = (swiper: any) => {
     if (contentRef.current) {
       contentRef.current.classList.remove("animate__fadeOutDown");
@@ -79,15 +77,16 @@ export default function ProjectSwiper() {
   return (
     <section className="relative pb-[220px] overflow-hidden">
       <Swiper
-        modules={[Navigation, Autoplay, Pagination]}
+        modules={[Navigation, Autoplay, Pagination, Parallax]}
         autoplay={{ delay: duration, disableOnInteraction: false }}
         navigation={{
           nextEl: ".custom-next",
           prevEl: ".custom-prev",
         }}
-        pagination={swiperPagination}
+        speed={2000}
         loop
         className="w-full h-full"
+        pagination={swiperPagination}
         onAutoplayTimeLeft={onAutoplayTimeLeft}
         onSlideChangeTransitionStart={handleSlideChangeStart}
         onSlideChangeTransitionEnd={handleSlideChangeEnd}
@@ -102,11 +101,11 @@ export default function ProjectSwiper() {
           </div>
         </div>
         {slides.map((slide, index) => (
-          <SwiperSlide key={index} className="group">
-            <div className="relative w-full h-[100vh] before:content-[''] before:z-10 before:absolute before:inset-0 before:bg-black/50 slide-img">
+          <SwiperSlide key={index} className="  ">
+            <div className="relative w-full h-[100vh]  slide-img bg-background/70">
               <Image
                 alt="Background"
-                className="object-cover h-full w-full"
+                className="object-cover h-full w-full reveal-img"
                 src={slide.banner}
                 fill
               />
@@ -114,13 +113,14 @@ export default function ProjectSwiper() {
           </SwiperSlide>
         ))}
       </Swiper>
+
       <div
         className={`
-        content-box  p-12 bg-main-dark gap-4 lg:max-w-[64%] max-w-[85%]  absolute  z-[5] right-0 top-[47%]   animate__animated animate__fadeInUp  `}
+    content-box  p-12 bg-main-dark gap-4 lg:max-w-[64%] max-w-[85%]  absolute  z-[5] right-0 top-[47%]   animate__animated animate__fadeInUp  `}
         ref={contentRef}
       >
-        <div className="grid grid-cols-12 items-center">
-          <div className="col-span-4 p-4">
+        <div className="grid grid-cols-12 items-center ">
+          <div className="col-span-12 md:col-span-4 p-4">
             <Image
               src={slides[activeIndex].img}
               alt={slides[activeIndex].title}
@@ -128,7 +128,7 @@ export default function ProjectSwiper() {
               height={200}
             />
           </div>
-          <div className="col-span-8 border-l border-white/60 pl-6">
+          <div className="col-span-12 md:col-span-8 border-l border-white/60 pl-6">
             <SubHeader title={slides[activeIndex].title} />
             <p className="text-sm text-secondary">
               {slides[activeIndex].description}
@@ -142,27 +142,26 @@ export default function ProjectSwiper() {
           </div>
         </div>
       </div>
-
       <div
         className="py-2 w-full max-w-[350px] absolute top-[40%] -translate-x-1/2 -translate-y-[40%] z-20
-             left-1/2 rtl:right-1/2 rtl:translate-x-1/2"
+         left-1/2 rtl:right-1/2 rtl:translate-x-1/2"
       >
         <button
           aria-label="Previous Slide"
-          className="group transition-all duration-300 p-2 rounded-full bg-white/10 backdrop-blur-sm 
-               hover:bg-white/20  
-               custom-prev absolute ltr:left-0 rtl:right-0 top-1/2 -translate-y-1/2 z-10
-               shadow-md focus:outline-none focus:ring-2 focus:ring-main/50"
+          className="group transition-all duration-300 p-2 rounded-full bg-white/10 backdrop-blur-sm
+           hover:bg-white/20
+           custom-prev absolute ltr:left-0 rtl:right-0 top-1/2 -translate-y-1/2 z-10
+           shadow-md focus:outline-none focus:ring-2 focus:ring-main/50"
         >
           <ChevronLeft className="text-white w-8 h-8 rtl:hidden group-hover:scale-110 transition-transform" />
           <ChevronRight className="text-white w-8 h-8 ltr:hidden group-hover:scale-110 transition-transform" />
         </button>
         <button
           aria-label="Next Slide"
-          className="group transition-all duration-300 p-2 rounded-full bg-white/10 backdrop-blur-sm 
-               hover:bg-white/20  
-               custom-next absolute ltr:right-0 rtl:left-0 top-1/2 -translate-y-1/2 z-10
-               shadow-md focus:outline-none focus:ring-2 focus:ring-main/50"
+          className="group transition-all duration-300 p-2 rounded-full bg-white/10 backdrop-blur-sm
+           hover:bg-white/20
+           custom-next absolute ltr:right-0 rtl:left-0 top-1/2 -translate-y-1/2 z-10
+           shadow-md focus:outline-none focus:ring-2 focus:ring-main/50"
         >
           <ChevronRight className="text-white w-8 h-8 rtl:hidden group-hover:scale-110 transition-transform" />
           <ChevronLeft className="text-white w-8 h-8 ltr:hidden group-hover:scale-110 transition-transform" />

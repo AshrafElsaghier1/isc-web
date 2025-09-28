@@ -406,23 +406,7 @@ body {
     filter: blur(0px) saturate(100%);
   }
 }
-/* @keyframes hero-underlay-sweep-ltr {
-  0% {
-    opacity: 0;
-    transform: translateX(-30%);
-    filter: blur(6px) saturate(110%);
-  }
-  10% {
-    opacity: 0.55;z1
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(130%);
-    filter: blur(0px) saturate(100%);
-  }
-} */
 
-/* default LTR; use .rtl .hero-underlay-sweep to flip if you prefer a CSS-only RTL flip */
 [data-hero-underlay].hero-underlay-sweep {
   position: absolute;
   inset: 0;
@@ -506,4 +490,51 @@ body {
 .swiper-wrapper,
 .swiper-slide {
   overflow: visible !important;
+}
+
+/* .reveal-img {
+  transform: scaleX(0.3);
+  opacity: 0;
+  transition: transform 4.8s ease-out, opacity 0.6s ease-out;
+  mix-blend-mode: multiply;
+  transform-origin: right;
+}
+
+.swiper-slide-next .reveal-img {
+  transform-origin: right;
+}
+
+.swiper-slide-prev .reveal-img {
+  transform-origin: left;
+}
+
+.swiper-slide-active .reveal-img {
+  transform: scaleX(1);
+  opacity: 1;
+  transition: transform 1s ease-in-out, opacity 0.8s ease-in-out;
+  transition-delay: 0.5s;
+}
+  */
+
+.reveal-img {
+  transform: scaleX(0.3);
+  opacity: 0;
+  transition: transform 1.5s ease-out, opacity 0.9s ease-out;
+  mix-blend-mode: multiply;
+  transform-origin: right;
+}
+
+.swiper-slide-next .reveal-img {
+  transform-origin: right;
+}
+
+.swiper-slide-prev .reveal-img {
+  transform-origin: left;
+}
+
+.swiper-slide-active .reveal-img {
+  transform: scaleX(1);
+  opacity: 1;
+  transition: transform 1.5s ease-in-out, opacity 0.9s ease-in-out;
+  transition-delay: 0.5s;
 }
