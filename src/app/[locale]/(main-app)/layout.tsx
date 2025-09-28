@@ -38,12 +38,12 @@ export default async function RootLayout({
       >
         <body className={`  antialiased`}>
           <ClientWrapper>
-            {/* <FullScreenNav
+            <FullScreenNav
               brand="ATTAL PROPERTIES"
               phoneLabel="19431"
               // Optionally override items:
               // leftItems={[...]} rightItems={[...]}
-            /> */}
+            />
             <main className="w-full">
               {children}
               <Footer />
