@@ -22,7 +22,7 @@ export default function Footer() {
             <h5 className="font-semibold text-primary mb-1.5 "> HEAD OFFICE</h5>
             <Link
               target="_blank"
-              className="text-base hover:text-primary-hover transition-colors"
+              className="text-base hover:text-primary transition-colors"
               href="#"
             >
               B 61. Salah Salem, El Orouba. Heliopolis. Cairo. Egypt - SALES
@@ -34,7 +34,7 @@ export default function Footer() {
               <h5 className="font-semibold text-primary mb-1.5 "> EMAIL US </h5>
               <Link
                 target="_blank"
-                className="text-base hover:text-primary-hover transition-colors"
+                className="text-base hover:text-primary transition-colors"
                 href="mailto:info@test.com"
               >
                 info@test.com
@@ -50,7 +50,7 @@ export default function Footer() {
                     <Link
                       target="_blank"
                       href={link}
-                      className="hover:text-primary-hover transition-colors"
+                      className="hover:text-primary transition-colors"
                     >
                       {Icon}
                     </Link>
@@ -64,7 +64,7 @@ export default function Footer() {
               <h5 className="font-semibold text-primary mb-1.5    ">HOTLINE</h5>
               <Link
                 target="_blank"
-                className="text-base hover:text-primary-hover transition-colors"
+                className="text-base hover:text-primary transition-colors"
                 href="tel:123456"
               >
                 123456
@@ -82,7 +82,7 @@ export default function Footer() {
             <p className="text-sm text-muted"> © ISC Holding, 2025 </p>
             <Link
               href="/"
-              className="text-sm text-muted underline hover:text-primary-hover w-fit transition-all"
+              className="text-sm text-muted underline hover:text-primary w-fit transition-all"
             >
               Privacy Policy
             </Link>
